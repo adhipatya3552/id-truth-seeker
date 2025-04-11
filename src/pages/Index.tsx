@@ -28,6 +28,9 @@ const Index = () => {
           ? 'The provided ID appears to be genuine.' 
           : 'The provided ID appears to be fake or contains incorrect information.',
         variant: result === 'genuine' ? 'default' : 'destructive',
+        icon: result === 'genuine' 
+          ? <ShieldCheck className="h-5 w-5 text-success" /> 
+          : <ShieldAlert className="h-5 w-5" />,
       });
     } catch (error) {
       toast({
